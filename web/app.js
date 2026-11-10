@@ -60,7 +60,17 @@
     state.reviewed = loadStore(REVIEWED_KEY);
     state.audit = loadAudit();
     renderStats(); renderBonus(); renderAudit(); applyFilters();
-    if (state.cases.length) selectCase(state.cases[0].questionId);
+    /* Deep links, for sharing a case or a tab with faculty:
+       ?case=<questionId> selects a case; #unreported / #how / #audit opens a tab. */
+    var params = new URLSearchParams(location.search);
+    var wantCase = params.get("case");
+    var hash = (location.hash || "").replace("#", "");
+    if (hash === "unreported" || hash === "how" || hash === "audit") {
+      document.querySelector('.tab[data-tab="' + hash + '"]').click();
+    }
+    var first = wantCase && state.cases.some(function (c) { return c.questionId === wantCase; })
+      ? wantCase : (state.cases[0] && state.cases[0].questionId);
+    if (first) selectCase(first);
   }).catch(function (e) {
     $("detail").innerHTML = "<p>Could not load data.json. " + esc(String(e)) + "</p>";
   });
