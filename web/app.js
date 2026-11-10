@@ -180,20 +180,27 @@
     }
     var srcHtml = edit.field === "solution" ? qu.solutionHtml : qu.questionHtml;
     var before = plain(srcHtml), after = before;
-    /* Space-tolerant find: MathML flattening joins tokens ("5.47Å") while the
-       edit is written against the human-readable form ("5.47 Å"). Match with
-       whitespace removed, then map the span back to the original text. */
-    var findNorm = edit.find.replace(/\s+/g, "");
-    var beforeNorm = before.replace(/\s+/g, "");
-    var idx2 = beforeNorm.indexOf(findNorm);
-    var idx = -1, end = -1;
-    if (idx2 !== -1) {
-      var count = 0;
-      for (var i = 0; i < before.length; i++) {
-        if (!/\s/.test(before[i])) { if (count === idx2) { idx = i; break; } count++; }
+    /* Space- and symbol-tolerant find. MathML flattening joins tokens
+       ("5.47Å") and the stored data writes angstrom as a literal \AA, while
+       the edit is written against the human-readable form ("5.47 Å").
+       Normalise whitespace, backslashes and Å→AA on both sides, keeping a
+       position map so the highlighted span lands on the original text. */
+    function normWithMap(s) {
+      var out = "", map = [];
+      for (var i = 0; i < s.length; i++) {
+        var ch = s[i];
+        if (/\s/.test(ch) || ch === "\\") continue;
+        if (ch === "Å") { out += "AA"; map.push(i); map.push(i); continue; }
+        out += ch; map.push(i);
       }
-      end = idx; var n = 0;
-      while (end < before.length && n < findNorm.length) { if (!/\s/.test(before[end])) n++; end++; }
+      return { text: out, map: map };
+    }
+    var bn = normWithMap(before), fn = normWithMap(edit.find);
+    var idx2 = bn.text.indexOf(fn.text);
+    var idx = -1, end = -1;
+    if (idx2 !== -1 && fn.text.length) {
+      idx = bn.map[idx2];
+      end = bn.map[idx2 + fn.text.length - 1] + 1;
     }
     var beforeHtml, afterHtml;
     if (idx === -1) {
