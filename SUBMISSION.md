@@ -7,7 +7,7 @@ Do not send until the video link and the 4 answers below are filled in.
 
 - **Repo:** https://github.com/Ganesh-123-maker/acadza-report-fix
 - **Live console:** https://ganesh-123-maker.github.io/acadza-report-fix/
-- **Video (3 min):** [ADD LINK — narrated walkthrough of the live console + one tricky case]
+- **Video (2 min 40 s):** https://drive.google.com/file/d/1TpA2XzsoXdEKIKW2H-gw9cnyLJUH47k_/view?usp=drivesdk — narrated walkthrough of the live console + one tricky case (de Broglie solution-from-another-question), anyone-with-link
 
 ## The 4 answers (from the README)
 
@@ -37,7 +37,7 @@ assignment.
 
 - Repo: https://github.com/Ganesh-123-maker/acadza-report-fix
 - Live faculty console: https://ganesh-123-maker.github.io/acadza-report-fix/
-- 3-minute walkthrough: [VIDEO LINK]
+- 3-minute walkthrough: https://drive.google.com/file/d/1TpA2XzsoXdEKIKW2H-gw9cnyLJUH47k_/view?usp=drivesdk (2 min 40 s, narrated)
 
 What I built: a triage engine (independent LLM solver → deterministic
 guards → human adjudication) that triaged all 44 reports — 26 defects,
