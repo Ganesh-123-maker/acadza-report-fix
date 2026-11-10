@@ -1,0 +1,314 @@
+[
+  {
+    "qid": "68dea616d0cda73d07e93ae6",
+    "correct_answer": "1",
+    "key_correct": false,
+    "solution_ok": false,
+    "defect_in_question_or_solution": "The stored answer and solution calculation are incorrect; total flux is q/e0, giving n = 2? Wait: face charge q/2 contributes (q/2)/e0 * 1/2 = q/(4e0) to the cube? No, a face is shared by 2 cubes, so flux inside one cube is (q/2)/(2e0) = q/(4e0). Corner charge 2q is shared by 8 cubes, so flux is (2q)/(8e0) = q/(4e0). Total flux = q/(4e0) + q/(4e0) = q/(2e0) = (1*q)/(2e0), so n = 1.",
+    "working": "Flux from face charge = (q/2) / (2e0) = q/(4e0). Flux from corner charge = (2q) / (8e0) = q/(4e0). Total flux = q/(2e0) = n q / (2e0), hence n = 1."
+  },
+  {
+    "qid": "68e8734442c06737d6e56da4",
+    "correct_answer": "A",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Weight = 100 N, mass m = 10 kg. F - \\mu mg = ma => F - 100\\mu = 10*(1) = 10. When force is doubled: 2F - 100\\mu = 10*(10) = 100. Solving gives \\mu = 0.8."
+  },
+  {
+    "qid": "61dffbec08489156b684bd22",
+    "correct_answer": "A",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "The lining of the small intestine is made of epithelial tissue (specifically, simple columnar epithelium)."
+  },
+  {
+    "qid": "60f744b3f1b9bc7cc7b4a949",
+    "correct_answer": "A",
+    "key_correct": false,
+    "solution_ok": false,
+    "defect_in_question_or_solution": "The correct option is A (50 V), but the stored answer incorrectly lists C.",
+    "working": "V = sqrt(VR^2 + (VL - VC)^2) = sqrt(40^2 + (60 - 30)^2) = sqrt(1600 + 900) = sqrt(2500) = 50 V."
+  },
+  {
+    "qid": "68e870ef42c06737d6e565c4",
+    "correct_answer": "D",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "P = (1/3) * rho * v_rms^2 = (1/3) * (9 * 10^-2) * (400)^2 = 4800 N/m^2."
+  },
+  {
+    "qid": "60f742f6660d187cc13a8078",
+    "correct_answer": "C",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Z = sqrt(R^2 + (2*pi*f*L)^2). With R = 40 ohm, f = 50 Hz, and L approx 0.0955 H, Z = sqrt(40^2 + (2*pi*50*0.0955)^2) = sqrt(1600 + 900) = 50 ohm."
+  },
+  {
+    "qid": "695ee00b88d7701e561aabc5",
+    "correct_answer": "C",
+    "key_correct": false,
+    "solution_ok": false,
+    "defect_in_question_or_solution": "Assertion is true because I = 2I_0 cos^2(pi/4) = I_0. Reason is false because resultant intensity is not always the sum of individual intensities.",
+    "working": "I = I_1 + I_2 + 2*sqrt(I_1 I_2)cos(phi). For equal intensity I_0 and phi = pi/2, I = 2I_0 + 0 = I_0. Thus Assertion is true, but Reason is false."
+  },
+  {
+    "qid": "622f08d7b70e4b50e4500a1b",
+    "correct_answer": "C",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "v_cm = (m1*v1 + m2*v2) / (m1 + m2) = (10*14 + 4*0) / (10 + 4) = 140 / 14 = 10 m/s."
+  },
+  {
+    "qid": "6208e80a9cb2ab67dac61bd0",
+    "correct_answer": "C",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Canopy leaves absorb red and blue light, transmitting green light to understory herbs and shrubs, resulting in lower photosynthesis rates."
+  },
+  {
+    "qid": "68dea7c2387eea3d0d95f9bb",
+    "correct_answer": "8",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Shift = (D/d) * [t1(mu1 - 1) - t2(mu2 - 1)] = (1 / 5e-3) * [2(0.5) - 1.5(0.4)] * 1e-3 = 0.08 m = 8 cm."
+  },
+  {
+    "qid": "620e23cecc50543bc7db9186",
+    "correct_answer": "B",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Outgroup analysis using a more distantly related species helps determine the ancestral state of a character."
+  },
+  {
+    "qid": "63c7cce12981ed154ee92c94",
+    "correct_answer": "C",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": "Chapter tagged as Geometrical optics instead of Electromagnetic waves or Current electricity/Capacitance.",
+    "working": "Displacement current id = C (dV/dt) = [k * eps0 * A / d] * (dV/dt) = [10 * 8.85e-12 * 1 / 1e-3] * 25 = 2.2125e-6 A = 2.2 \u03bcA."
+  },
+  {
+    "qid": "68ecbacb2ec87a18deba1ad7",
+    "correct_answer": "B",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "The absolute refractory period is caused by the inactivation of voltage-gated Na+ channels, preventing another action potential."
+  },
+  {
+    "qid": "68f21df0941cda588bc0470b",
+    "correct_answer": "A",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Momentum p = sqrt(2m*KE). If KE becomes 4 times, momentum becomes sqrt(4) = 2 times."
+  },
+  {
+    "qid": "63765a28f1d8416ae0408d89",
+    "correct_answer": "C",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Fraction remaining = 1 - 7/8 = 1/8 = (1/2)^3. So, time = 3 * half life = 3 * 60 = 180 days."
+  },
+  {
+    "qid": "6264197209f4fd65f58f5707",
+    "correct_answer": "C",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Golden Rice is biofortified with beta-carotene (provitamin A) to combat vitamin A deficiency and associated blindness."
+  },
+  {
+    "qid": "68dea577d0cda73d07e9391c",
+    "correct_answer": "14",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "V_P = (KQ/(2R^3))*(3R^2 - R^2/4) = 11KQ/(8R), V_S = KQ/(2R). V_P - V_S = 7KQ/(8R) = 7(16)/8 = 14 V."
+  },
+  {
+    "qid": "6956d7bb23cb221e570d6013",
+    "correct_answer": "B",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "H = R => (u^2 sin^2 theta)/(2g) = (u^2 sin 2theta)/g => sin^2 theta / 2 = 2 sin theta cos theta => tan theta = 4."
+  },
+  {
+    "qid": "61ee6c9d90a1a968a168686b",
+    "correct_answer": "B",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Peyer's patches are lymphoid tissue aggregates located in the ileum (distal part of the small intestine)."
+  },
+  {
+    "qid": "6956d79788d7701e5617bc29",
+    "correct_answer": "B",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Phase difference phi = pi/2 between voltage and current. Power P = V_rms I_rms cos(pi/2) = 0 W."
+  },
+  {
+    "qid": "6263d75bdd44e265ef926d97",
+    "correct_answer": "40",
+    "key_correct": false,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Weight of mass = buoyant force due to 2 cm immersion: 0.8 * g = a^2 * 2 * 1 * g => a^2 = 400 => a = 20 cm, wait: 0.8 kg = 800 g. 800 * g = a^2 * 2 * 1 * g => a^2 = 400 => a = 20 cm."
+  },
+  {
+    "qid": "612151a6a34397610a9a2e58",
+    "correct_answer": "A",
+    "key_correct": null,
+    "solution_ok": false,
+    "defect_in_question_or_solution": "Solution is completely irrelevant and mentions wavelength calculations unrelated to electron kinetic energy.",
+    "working": "Using lambda = 12.27 / sqrt(V) Angstroms. For lambda = 3 Angstroms (0.3 nm), sqrt(V) = 12.27 / 3 = 4.09 => V = 16.73 V. K = 16.73 eV, approximately 16.8 eV (Option B)."
+  },
+  {
+    "qid": "68c801bc1b1dbc16dc93bf2b",
+    "correct_answer": "A",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "lambda_min = hc / eV = 12400 / 24800 = 0.5 Angstrom. For electron, lambda = h / sqrt(2mK) = 0.5 * 10^-10 m. Solving yields K approx 600 eV."
+  },
+  {
+    "qid": "617fa18efd53ff1629ed890f",
+    "correct_answer": "D",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "The leaf lamina (or leaf blade) is the green expanded part of the leaf with veins and veinlets."
+  },
+  {
+    "qid": "6956d7e988d7701e5617bd3e",
+    "correct_answer": "D",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "v = A\u03c9 cos(\u03c9t); \u03c9 = 2\u03c0/16 = \u03c0/8; v = \u03c0 at t = 2s. Thus \u03c0 = A*(\u03c0/8)*cos(\u03c0/4) => A = 8\u221a2 m."
+  },
+  {
+    "qid": "60ca4feb6420652745f55522",
+    "correct_answer": "C",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "F = k q1 q2 / r^2 = 100. New force F' = k (1.1 q1) (0.9 q2) / r^2 = 0.99 * 100 = 99 N."
+  },
+  {
+    "qid": "68f21caf941cda588bc04365",
+    "correct_answer": "B",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "N/N0 = 6/48 = 1/8 = e^(-t/tau). t/tau = ln(8) = 3 ln(2) = 2.079. tau = 3 / 2.079 = 1.44 min."
+  },
+  {
+    "qid": "68e872546e45ba37dcc16bc0",
+    "correct_answer": "C",
+    "key_correct": null,
+    "solution_ok": true,
+    "defect_in_question_or_solution": "Option C is missing in the question text, but the correct ratio of forces is 1:1 by Newton's third law.",
+    "working": "By Newton's third law, the electrostatic forces exerted by two charges on each other are equal and opposite, so their ratio is 1:1."
+  },
+  {
+    "qid": "6208e298fa399567e0878700",
+    "correct_answer": "A",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Julius von Sachs demonstrated that starch is produced when plants grow and is formed in green parts of plants."
+  },
+  {
+    "qid": "636283dbe3770c24f866e6d6",
+    "correct_answer": "B",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "R = 4r and Q = 64q. Surface charge density ratio is (Q/q) * (r/2 / R/2)^2 = 64 * (1/4)^2 = 4:1."
+  },
+  {
+    "qid": "6062ec84518e9535e120c422",
+    "correct_answer": "A",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "alpha = dL/(L*dT) = 0.19/(100*100) = 1.9 x 10^-5 /C. Cubical expansion gamma = 3 alpha = 5.7 x 10^-5 /C."
+  },
+  {
+    "qid": "696a866665252c04fc1f81c2",
+    "correct_answer": "50",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Delta V = (P * V) / B. Assuming a 10 cm cube (V = 1000 cm3 = 10^-3 m3), Delta V = (7x10^6 * 10^-3)/(1.4x10^11) = 5 x 10^-8 m^3 = 50 mm^3."
+  },
+  {
+    "qid": "66fe9dbe22132e5a70a3e579",
+    "correct_answer": "D",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Relaxin and Inhibin have completely different functions (relaxin softens pelvic ligaments during childbirth, inhibin inhibits FSH secretion), so they are not antagonistic pairs."
+  },
+  {
+    "qid": "622df25ab70e4b50e44ff837",
+    "correct_answer": "B",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Excess pressure inside a bubble is inversely proportional to radius (P = 4T/r). End 1 has a smaller radius than end 2 (sub-hemispherical means radius > r), so pressure at end 1 is higher, causing air to flow from end 1 to end 2."
+  },
+  {
+    "qid": "68c9ae5afb6b2f16e2d43b1c",
+    "correct_answer": "D",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Photon energy E = 12400 / 4000 = 3.1 eV. Max kinetic energy = E - phi = 3.1 - 2.0 = 1.1 eV. Thus, stopping potential is 1.1 V."
+  },
+  {
+    "qid": "68c8153cfb6b2f16e2d3ceaf",
+    "correct_answer": "['A, B, D']",
+    "key_correct": null,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Parallel to E: straight line (A). Perpendicular to E: parabola (B). Parallel to B: straight line, not helix (C is incorrect). Perpendicular to B: circle (D). Hence A, B, D are correct."
+  },
+  {
+    "qid": "68dea715387eea3d0d95f790",
+    "correct_answer": "3113",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Side length 7.203 m has 4 sig figs. Surface area = 6 * (7.203)^2 = 311.299... -> rounded to 4 sig figs is 311.3. Then 10A = 3113."
+  },
+  {
+    "qid": "68dea619d0cda73d07e93aee",
+    "correct_answer": "4",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Difference in angle = 0.5 * (pi/2 - pi/4) * t^2 = 2pi * n. For first alignment (n=1), 0.5 * (pi/4) * t^2 = 2pi => t^2 = 16 => t = 4 s."
+  },
+  {
+    "qid": "5fc60508028950133eac8963",
+    "correct_answer": "20",
+    "key_correct": true,
+    "solution_ok": true,
+    "defect_in_question_or_solution": null,
+    "working": "Weight = mg = 2 * 10 = 20 N. Max static friction = 0.3 * 100 = 30 N. Since weight < f_max, actual static friction equals weight = 20 N."
+  }
+]

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acadza · Report → Fix — Faculty Review Console</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">A</div>
+    <div>
+      <h1>Report → Fix <span class="sub">faculty review console</span></h1>
+      <p class="tagline">Student reports, triaged by AI, decided by you. One click per case.</p>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab active" data-tab="queue" role="tab">Queue</button>
+  <button class="tab" data-tab="unreported" role="tab">Unreported defects <span class="pill" id="bonusCount"></span></button>
+  <button class="tab" data-tab="how" role="tab">How triage works</button>
+  <button class="tab" data-tab="audit" role="tab">Audit log <span class="pill" id="auditCount">0</span></button>
+</nav>
+
+<main>
+  <section id="tab-queue" class="tabpanel">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search a question, chapter, or report — e.g. flux, LCR, Peyer" aria-label="Search cases">
+      <select id="filterVerdict" aria-label="Filter by verdict">
+        <option value="">All verdicts</option>
+        <option value="defect">Defect</option>
+        <option value="no_error">No error</option>
+        <option value="display_issue">Display issue</option>
+        <option value="app_issue">App issue</option>
+        <option value="language_mode">Language request</option>
+        <option value="not_actionable">Not actionable</option>
+      </select>
+      <select id="filterRoute" aria-label="Filter by route">
+        <option value="">All routes</option>
+        <option value="auto_apply">Ready to auto-apply</option>
+        <option value="faculty_review">Needs faculty</option>
+        <option value="no_change">No change</option>
+      </select>
+      <select id="filterSubject" aria-label="Filter by subject">
+        <option value="">All subjects</option>
+        <option value="Physics">Physics</option>
+        <option value="Zoology">Zoology</option>
+        <option value="Botany">Botany</option>
+      </select>
+      <label class="check"><input type="checkbox" id="hideReviewed"> Hide reviewed</label>
+      <span class="progress" id="progress"></span>
+    </div>
+    <p class="urgency-note">Ordered by urgency: how many students a defect hurts × how bad it is if it stays live. Answer-key errors first — a wrong key teaches 8 lakh students the wrong answer. <button class="linklike" id="whyUrgency">Why this order?</button></p>
+    <div class="split">
+      <ol class="queue" id="queue" aria-label="Case queue"></ol>
+      <article class="detail" id="detail" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <section id="tab-unreported" class="tabpanel hidden">
+    <h2>Defects nobody reported</h2>
+    <p class="lede">Every one of the 43 questions was re-solved independently, including the 4 with no reports. No unreported defect changes any answer key — the three key errors were all reported by students. What the scan did find is solution-text quality: four items below, plus the four unreported questions that checked out clean.</p>
+    <div id="bonusList" class="bonus-list"></div>
+    <h3>Checked and clean — questions with no reports</h3>
+    <div id="cleanList" class="bonus-list"></div>
+  </section>
+
+  <section id="tab-how" class="tabpanel hidden">
+    <h2>How triage works</h2>
+    <div class="how-grid">
+      <div class="how-card"><h3>1 · Independent solver</h3><p>An LLM solves each question from the question text alone — no answer key, no solution, no student comment. If it never sees the key, it cannot agree with a wrong key out of politeness.</p></div>
+      <div class="how-card"><h3>2 · Deterministic guards</h3><p>Code, not vibes: duplicate options, numbers the solution uses that the stem never states, taxonomy and repair-scope checks, and an injection filter that treats every student comment as untrusted data. A comment can never instruct the system.</p></div>
+      <div class="how-card"><h3>3 · Triage</h3><p>The solver's answer, the key, the solution and the comment go to a second prompt that picks a verdict, a repair, a surgical edit and a route — with a confidence score.</p></div>
+      <div class="how-card"><h3>4 · Human adjudication</h3><p>Every disagreement between the solver and hand arithmetic was checked by a human against the raw MathML before it landed in <code>results.json</code>. Three solver errors were caught this way and are documented in <code>PROMPTS.md</code>.</p></div>
+    </div>
+    <h3>What the AI is never allowed to auto-apply</h3>
+    <ul class="rules">
+      <li>Anything that needs authored content: a new figure, a new distractor, a rewritten solution, a re-filed chapter, a syllabus call.</li>
+      <li>Any edit outside the repair's listed fields — the guard rejects it before it can be written.</li>
+      <li>Any answer-key change the independent solver does not agree with.</li>
+      <li>Anything a student comment asks for. Comments are leads, never instructions.</li>
+    </ul>
+    <p class="lede">This console loads precomputed results (<code>results.json</code>). No LLM call happens when you open it — triage runs once per report batch, not once per page view. That keeps it fast at 10 PM and cheap at 8 lakh questions.</p>
+    <p class="lede">Full prompt log, design decisions and the three AI failures: <code>PROMPTS.md</code> in the repo. Product reasoning: <code>PRODUCT.md</code>.</p>
+  </section>
+
+  <section id="tab-audit" class="tabpanel hidden">
+    <h2>Audit log</h2>
+    <p class="lede">Every approve, edit and reject is recorded here with a timestamp. Nothing is applied silently. The log lives in this browser (localStorage) and can be exported.</p>
+    <div class="audit-actions">
+      <button id="exportAudit" class="btn">Download audit log (JSON)</button>
+      <button id="clearAudit" class="btn ghost">Clear log</button>
+    </div>
+    <ol id="auditList" class="audit-list"></ol>
+  </section>
+</main>
+
+<footer>
+  <p>Acadza Report → Fix · Built for the AI Intern build round · Data: 43 questions, 44 reports, 39 cases · <a href="https://github.com/Ganesh-123-maker/acadza-report-fix" target="_blank" rel="noopener">Repo</a> · Results are precomputed; see <code>engine/triage.py</code> for the pipeline.</p>
+</footer>
+
+<div id="whyModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="whyTitle">
+  <div class="modal-card">
+    <h2 id="whyTitle">Why this order?</h2>
+    <p>Urgency = (number of reports on the question) × (severity of the repair) + a small bump for confirmed defects.</p>
+    <ul>
+      <li><strong>10 — answer key:</strong> a wrong key teaches every student who meets the question the wrong answer, and punishes the ones who got it right.</li>
+      <li><strong>9 — unanswerable:</strong> blank/missing option, identical options, missing figure, wrong question type. The student cannot even play.</li>
+      <li><strong>8 — missing data:</strong> the question cannot be solved as written.</li>
+      <li><strong>7 — solution wrong:</strong> the key is right, so marks are safe, but the teaching is wrong.</li>
+      <li><strong>5 — filing:</strong> wrong chapter, syllabus question. Needs a human, hurts nobody tonight.</li>
+      <li><strong>4 — platform:</strong> display, app, language. Real, but not this question's content.</li>
+      <li><strong>3 — cosmetic:</strong> spelling, leaked markup, exam tags. Worth fixing, nobody's marks depend on it.</li>
+      <li><strong>1 — no change:</strong> the student was wrong, or the report said nothing checkable. Shown last so your evening goes to real defects first.</li>
+    </ul>
+    <button class="btn" id="whyClose">Got it</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
