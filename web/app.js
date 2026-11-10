@@ -180,14 +180,29 @@
     }
     var srcHtml = edit.field === "solution" ? qu.solutionHtml : qu.questionHtml;
     var before = plain(srcHtml), after = before;
-    var idx = before.indexOf(edit.find);
+    /* Space-tolerant find: MathML flattening joins tokens ("5.47Å") while the
+       edit is written against the human-readable form ("5.47 Å"). Match with
+       whitespace removed, then map the span back to the original text. */
+    var findNorm = edit.find.replace(/\s+/g, "");
+    var beforeNorm = before.replace(/\s+/g, "");
+    var idx2 = beforeNorm.indexOf(findNorm);
+    var idx = -1, end = -1;
+    if (idx2 !== -1) {
+      var count = 0;
+      for (var i = 0; i < before.length; i++) {
+        if (!/\s/.test(before[i])) { if (count === idx2) { idx = i; break; } count++; }
+      }
+      end = idx; var n = 0;
+      while (end < before.length && n < findNorm.length) { if (!/\s/.test(before[end])) n++; end++; }
+    }
     var beforeHtml, afterHtml;
     if (idx === -1) {
       beforeHtml = "<p>" + esc(before.slice(0, 400)) + "…</p>";
       afterHtml = "<p>Replace <b>" + esc(edit.find) + "</b> with <b>" + esc(edit.replace) + "</b> in the " + esc(edit.field) + ".</p>";
     } else {
-      beforeHtml = "<p>" + esc(before.slice(0, idx)) + '<mark class="del">' + esc(edit.find) + "</mark>" + esc(before.slice(idx + edit.find.length, idx + edit.find.length + 400)) + "…</p>";
-      afterHtml = "<p>" + esc(before.slice(0, idx)) + '<mark class="ins">' + esc(edit.replace) + "</mark>" + esc(before.slice(idx + edit.find.length, idx + edit.find.length + 400)) + "…</p>";
+      var foundText = before.slice(idx, end);
+      beforeHtml = "<p>" + esc(before.slice(0, idx)) + '<mark class="del">' + esc(foundText) + "</mark>" + esc(before.slice(end, end + 400)) + "…</p>";
+      afterHtml = "<p>" + esc(before.slice(0, idx)) + '<mark class="ins">' + esc(edit.replace) + "</mark>" + esc(before.slice(end, end + 400)) + "…</p>";
     }
     var extra = "";
     if (qu.proposedSolution) extra = '<div class="note-box"><b>Full corrected solution proposed:</b> ' + esc(qu.proposedSolution) + '</div>';
