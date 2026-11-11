@@ -25,9 +25,20 @@ sent or linked anywhere in the submission.
    20 November 2026. (user, 11 Nov 2026)
 
 4. **In 2-3 lines, in your own words: why this work, why now?**
-   NOT PROVIDED — user has not given this answer. Do not invent it.
-   The submission was sent 11 Nov 2026 with answers 1–3 and a line saying
-   this note would follow separately.
+   Drafted by assistant 11 Nov 2026 (user asked for the wording, has not
+   yet approved it as his own words — he must read it before sending):
+   "I want this work because a broken question is not a small bug — for a
+   JEE/NEET student it can cost marks and trust, and fixing that at
+   Acadza scale is real, useful work. I enjoyed building the triage system
+   because it forced me to make the AI accountable — guards, human review,
+   an audit trail — instead of just trusting the model. And now is the
+   right time because I am in my final year, I can start on 20 November
+   and commit 3+ months, and I would rather spend that time building a
+   real product than doing a short internship for a certificate."
+   CORRECTION 11 Nov 2026: the submission has NOT been sent. Gmail search
+   (11 Nov 14:41 IST) shows no sent mail to Subham Sharma with the repo
+   link — only his original build-round email and Ganesh's 10 Nov forward
+   of it. The earlier line claiming it was sent was wrong.
 
 ## Draft email
 
@@ -56,8 +67,20 @@ Answers to your four questions:
 1. Yes — remote works for me.
 2. 3+ months.
 3. Earliest start date: 20 November 2026.
-4. Why this work, why now — I will send you a short note on that shortly
-   after this.
+4. Why this work, why now: I want this work because a broken question is
+   not a small bug — for a JEE/NEET student it can cost marks and trust,
+   and fixing that at Acadza scale is real, useful work. I enjoyed building
+   the triage system because it forced me to make the AI accountable —
+   guards, human review, an audit trail — instead of just trusting the
+   model. And now is the right time because I am in my final year, I can
+   start on 20 November and commit 3+ months, and I would rather spend
+   that time building a real product than doing a short internship for a
+   certificate.
+
+STATUS 11 Nov 2026 14:44 IST: SENT. User read the full draft in chat
+and said "send it". Draft r6175688751302093313 sent as message
+1a1c9e33c9edeadb, in Subham Sharma's thread 1a1c46a9366ff349, verified in
+Gmail Sent at 14:44:35 IST. Repo only, no video, all 4 answers included.
 
 Thanks for considering my work — I would love to build this for real, for
 the long run.
