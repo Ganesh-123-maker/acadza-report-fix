@@ -1,30 +1,33 @@
 # SUBMISSION.md — reply to Subham Sharma's email
 
 Send by replying to the Acadza build-round email from Subham Sharma.
-Do not send until the video link and the 4 answers below are filled in.
+User decision 11 Nov 2026: submit REPO ONLY — no video. The walkthrough
+video was deleted (Drive file trashed, local mp4 deleted) and must not be
+sent or linked anywhere in the submission.
 
 ## Links
 
 - **Repo:** https://github.com/Ganesh-123-maker/acadza-report-fix
-- **Live console:** https://ganesh-123-maker.github.io/acadza-report-fix/
-- **Video (2 min 40 s):** https://drive.google.com/file/d/1TpA2XzsoXdEKIKW2H-gw9cnyLJUH47k_/view?usp=drivesdk — narrated walkthrough of the live console + one tricky case (de Broglie solution-from-another-question), anyone-with-link
+- **Live console:** linked from the repo README (not sent as a separate link — repo only, per user)
+- **Video:** DELETED 11 Nov 2026 — do not send or link
 
 ## The 4 answers (from the README)
 
 1. **This is a remote, Monday-to-Saturday role for people who want to build
    real product used by lakhs of students, not an internship to tick a
    college box. Is that you?**
-   [USER TO ANSWER — suggested: Yes. This build is the evidence: a full
-   triage engine + faculty console, not a college-requirement checkbox.]
+   Yes — remote is fine with me. (user, 11 Nov 2026)
 
 2. **How many months can you commit?**
-   [USER TO ANSWER]
+   3+ months. (user, 11 Nov 2026)
 
 3. **Earliest start date.**
-   [USER TO ANSWER]
+   20 November 2026. (user, 11 Nov 2026)
 
 4. **In 2-3 lines, in your own words: why this work, why now?**
-   [USER TO ANSWER]
+   NOT PROVIDED — user has not given this answer. Do not invent it.
+   The submission was sent 11 Nov 2026 with answers 1–3 and a line saying
+   this note would follow separately.
 
 ## Draft email
 
@@ -36,8 +39,6 @@ Thank you for the build round — here is my submission for the Report → Fix
 assignment.
 
 - Repo: https://github.com/Ganesh-123-maker/acadza-report-fix
-- Live faculty console: https://ganesh-123-maker.github.io/acadza-report-fix/
-- 3-minute walkthrough: https://drive.google.com/file/d/1TpA2XzsoXdEKIKW2H-gw9cnyLJUH47k_/view?usp=drivesdk (2 min 40 s, narrated)
 
 What I built: a triage engine (independent LLM solver → deterministic
 guards → human adjudication) that triaged all 44 reports — 26 defects,
@@ -47,14 +48,16 @@ and a faculty console ordered by urgency, with native MathML rendering,
 before/after diffs, student-reply previews, and approve/edit/reject with
 a full audit log. PROMPTS.md has every prompt verbatim, the version
 history, and the three times the AI was wrong and how I caught it.
-BONUS.md lists 4 defects nobody reported. The console loads precomputed
-results, so it stays fast and costs nothing per page view.
+BONUS.md lists 4 defects nobody reported. The console (live link in the
+repo README) loads precomputed results, so it stays fast and costs
+nothing per page view.
 
 Answers to your four questions:
-1. [answer]
-2. [answer]
-3. [answer]
-4. [answer]
+1. Yes — remote works for me.
+2. 3+ months.
+3. Earliest start date: 20 November 2026.
+4. Why this work, why now — I will send you a short note on that shortly
+   after this.
 
 Thanks for considering my work — I would love to build this for real, for
 the long run.
